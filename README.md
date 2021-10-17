@@ -19,7 +19,6 @@ Pełni on zarówno funkcję źródła transakcji na koncie bankowym jak i lokaln
 * Uruchomienie narzędzia importu powoduje wykrycie nowych transakcji i przeniesienie ich do pliku *transactions.json* w podkatalogu *data*.
 * Następnie należy wyeksportować ten plik na serwer webowy witryny skarbca.
 
-
 Plik *transactions.json* nie jest modyfikowany po stronie witryny webowej.
 
 ### lokalna kopia danych
