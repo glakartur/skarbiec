@@ -4,7 +4,7 @@ System wspierający zadania skarbnika klasowego
 ## narzędzia
 skarbiec.py ACTION
 * ACTIONS:
-  * init - inicjalizacja katalogu na lokalną kopię danych skarbca
+  * init - inicjalizacja katalogu jako lokalnej kopii danych skarbca
   * import-transactions - import transakcji z konta bankowego do skarbca
 
 ## witryna skarbca
