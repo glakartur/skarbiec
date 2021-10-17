@@ -1,0 +1,6 @@
+AuthGroupFile /dev/null
+AuthType Basic
+AuthUserFile /dev/null
+AuthName "Dostęp tylklo przez witrynę"
+Require valid-user
+ErrorDocument 401 "Unauthorized Access"

@@ -1,0 +1,20 @@
+html {
+    font-family: Roboto, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+    color: #505050;
+    cursor: default;
+}
+
+.tran-box {
+    background: #0E56C2;
+    border-radius: 5px;
+    color: white;
+}
+
+.tran-box.odd {
+    background: #4b6c9e;
+    border-radius: 5px;
+    color: white;
+}
