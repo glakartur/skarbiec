@@ -7,6 +7,7 @@
         public $bookingsFileName = "data/bookings.json";
         public $accountsFileName = "data/accounts.json";
         public $usersFileName = "data/users.json";
+        public $passwordsFileName = "data/shadow.json";
         public $transfersFileName = "data/transfers.json";
         public $expensesFileName = "data/expenses.json";
         public $registrationsFileName = "data/registrations.txt";
@@ -20,6 +21,7 @@
             $this->bookingsFileName = $rootPath . $this->bookingsFileName;
             $this->accountsFileName = $rootPath . $this->accountsFileName;
             $this->usersFileName = $rootPath . $this->usersFileName;
+            $this->passwordsFileName = $rootPath . $this->passwordsFileName;
             $this->transfersFileName = $rootPath . $this->transfersFileName;
             $this->expensesFileName = $rootPath . $this->expensesFileName;
             $this->registrationsFileName = $rootPath . $this->registrationsFileName;

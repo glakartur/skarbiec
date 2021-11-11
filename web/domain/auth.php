@@ -22,29 +22,29 @@ class Auth
             return false;
         }    
 
-        $usersJson = file_get_contents($this->cfg->usersFileName);
-        if (!isset($usersJson) || empty($usersJson))
+        $shadowJson = file_get_contents($this->cfg->passwordsFileName);
+        if (!isset($shadowJson) || empty($shadowJson))
         {
             return false;
         }
         
-        $users = json_decode($usersJson);
-        if (!isset($users) || empty($users))
+        $shadow = json_decode($shadowJson);
+        if (!isset($shadow) || empty($shadow))
         {
             return false;
         }
 
-        foreach ($users as $user)
+        foreach ($shadow as $userPass)
         {
-            if ($user->login == $login)
+            if ($userPass->login == $login)
             {
-                $hashed_password = hash('sha512', "{$password}.{$user->salt}");
-                if ($hashed_password != $user->password)
+                $hashed_password = hash('sha512', "{$password}.{$userPass->salt}");
+                if ($hashed_password != $userPass->password)
                 {
                     return false;
                 }
 
-                $this->user = $user;
+                $this->SwitchToUser($login);
                 return true;
             }
         }
@@ -96,6 +96,48 @@ class Auth
 
         return in_array($permission, $this->user->permissions, $strict = false);
     }
+
+    public function SetPassword($login, $password)
+    {
+        if (empty($login))
+        {
+            return false;
+        }    
+
+        if (empty($password))
+        {
+            return false;
+        }    
+
+        $usersJson = file_get_contents($this->cfg->passwordsFileName);
+        if (!isset($usersJson) || empty($usersJson))
+        {
+            return false;
+        }
+        
+        $users = json_decode($usersJson);
+        if (!isset($users) || empty($users))
+        {
+            return false;
+        }
+
+        foreach ($users as $user)
+        {
+            if ($user->login == $login)
+            {
+                $hashed_password = hash('sha512', "{$password}.{$user->salt}");
+                $user->password = $hashed_password;
+
+                break;
+            }
+        }
+
+        echo "Saving...";
+        $json = json_encode($users, $flags = JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        file_put_contents($this->cfg->passwordsFileName, $json);
+
+        return true;
+    }    
 }
 /*
 [Wed Sep 22 00:07:12.477299 2021] [proxy_fcgi:error] [pid 29539:tid 140176814896896] [client 77.253.97.127:42740] AH01071: 
