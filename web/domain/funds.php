@@ -38,14 +38,17 @@ class Funds {
         usort($list, function($a, $b) {
             $ba = (bool)(isset($a->isActive) ? $a->isActive : true);
             $bb = (bool)(isset($b->isActive) ? $b->isActive : true);
-
-            if ($ba == $bb)
-                return strcmp($a->name, $b->name);
             
-            if ($ba)
-                return -1;
+            if ($ba != $bb)
+                return ($ba) ? -1 : 1;
 
-            return 1;
+            $ca = (bool)(isset($a->required) ? $a->required : false);
+            $cb = (bool)(isset($b->required) ? $b->required : false);
+
+            if ($ca != $cb)
+                return ($ca) ? -1 : 1;
+
+            return strcmp($a->name, $b->name);
         });
 
         return $list;

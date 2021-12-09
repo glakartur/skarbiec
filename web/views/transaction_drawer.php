@@ -48,20 +48,20 @@ class TransactionDrawer
         echo '<div class="row">';
             echo '<div class="col-sm-6">';
                 echo '<div>';
-                echo "<span class='tran-date'>" . $transaction->date . "</span>";
-                echo "<span class='tran-from'>" . $transaction->sender . "</span> --&gt;";
-                echo "<span class='tran-to'>" . $transaction->receiver . "</span>";
+                    echo "<span class='tran-date'>" . $transaction->date . "</span>";
+                    echo "<span class='tran-from'>" . $transaction->sender . "</span> --&gt;";
+                    echo "<span class='tran-to'>" . $transaction->receiver . "</span>";
                 echo "</div>";
                 echo "<div>";
-                echo "<span class='tran-descr-label'>Opis:</span>";
-                echo "<span class='tran-descr'>" . $transaction->description . "</span>";
+                    echo "<span class='tran-descr-label'>Opis:</span>";
+                    echo "<span class='tran-descr'>" . $transaction->description . "</span>";
                 echo "</div>";
             echo "</div>";
 
-        echo '<div class="col-sm-2 text-center">';
-            echo '<div class="text-center">' . $transaction->money . ' zł</div>';
-            echo '<div class="text-center"><span>' . $transaction->saleMoney . ' ' . $transaction->saleCurrency . '</div>';
-        echo '</div>';
+            echo '<div class="col-sm-2 text-center">';
+                echo '<div class="text-center">' . $transaction->money . ' zł</div>';
+                echo '<div class="text-center"><span>' . $transaction->saleMoney . ' ' . $transaction->saleCurrency . '</span></div>';
+            echo '</div>';
 
         if ($editMode)
         {
@@ -90,7 +90,7 @@ class TransactionDrawer
                     'data-bs-transaction="' . $transaction->id . '" ' .
                     '>zatwierdź</button></div>';
             }
-            echo '</div>';
+            //echo '</div>';
         }
 
         echo '<div class="border-top pt-2">';
@@ -145,6 +145,7 @@ class TransactionDrawer
             echo "</div>";
         }
 
+        echo "</div>";
         echo "</div>";
 
         echo '</div>';

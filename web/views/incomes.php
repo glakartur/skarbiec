@@ -23,7 +23,7 @@
     $knownPersons->Load();
     
     echo '<div class="row">';
-    echo '  <div class="col-sm-10"><h2>Zorganizowane zbiórki</h2></div>';
+    echo '  <div class="col-sm-10"><h2>Zbiórki</h2></div>';
     if ($auth->HasPermission(Permission::EditFund))
     {
         echo '  <div class="col-sm-2 text-end"><button type="button" class="btn btn-outline-dark btn-sm text-center" data-bs-toggle="modal" data-bs-target="#addFundForm"><i data-feather="plus-square"></i>Dodaj</button></div>';

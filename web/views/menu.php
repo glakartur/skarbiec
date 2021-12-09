@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <ul class="navbar-nav">
       <li class="nav-item active-d">
-        <a class="nav-link" href="/?p=st">Stan zbiórek</a>
+        <a class="nav-link" href="/?p=st">Stan wpłat</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/?p=ac">Rachunki</a>

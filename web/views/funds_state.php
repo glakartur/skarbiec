@@ -53,7 +53,7 @@
     }
 
 
-    echo "<h2>Stan zbiórek</h2>" . "\n";
+    echo "<h2>Stan wpłat</h2>" . "\n";
 
     echo "<table class='table table-striped'>" . "\n";
     
